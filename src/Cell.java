@@ -23,7 +23,7 @@ public class Cell extends Rectangle {
     g.setColor(Color.BLACK);
     g.drawRect(x, y, width, height);
   }
-
+  @Override
   public boolean contains(Point p) {
     if(p != null) {
       return super.contains(p);

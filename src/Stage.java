@@ -72,10 +72,10 @@ public class Stage {
         grid = new Grid();
         actors = new ArrayList<>();
         
-        // Create actors at simple positions
-        actors.add(new Cat(new Cell(185, 185)));    // [5,5]
-        actors.add(new Dog(new Cell(360, 360)));    // [10,10]
-        actors.add(new Bird(new Cell(535, 535)));   // [15,15]
+        // Create actors at specific positions
+        actors.add(new Cat(new Cell(10 + Cell.size * 5, 10 + Cell.size * 5)));
+        actors.add(new Dog(new Cell(10 + Cell.size * 2, 10 + Cell.size * 8)));
+        actors.add(new Bird(new Cell(10 + Cell.size * 15, 10 + Cell.size * 15)));
     }
     
     public void paint(Graphics g, Point mousePos) {

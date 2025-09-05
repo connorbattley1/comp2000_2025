@@ -2,7 +2,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Rectangle;
-
+//test
 public class Cell extends Rectangle {
   static int size = 35;
   char col;

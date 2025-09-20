@@ -1,12 +1,25 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Polygon;
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Actor {
-  Color color;
-  Cell loc;
-  List<Polygon> display;
+  protected Color color;
+  protected Cell loc;
+  protected List<Polygon> display = new ArrayList<>();
+  protected final Inventory<Item> bag = new Inventory<>();
+
+  public Actor(Cell inLoc) {
+    this.loc = inLoc;
+    // Subclasses should call updateDisplay() after construction if needed
+  }
+
+  public Inventory<Item> inventory() { return bag; }
+  public Cell cell() { return loc; }
+  public void setCell(Cell c) { this.loc = c; updateDisplay(); }
+
+  public abstract void updateDisplay();
 
   public void paint(Graphics g) {
     for(Polygon p: display) {

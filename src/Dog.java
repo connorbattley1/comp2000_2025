@@ -1,27 +1,34 @@
-import java.awt.Color;
-import java.awt.Polygon;
-import java.util.ArrayList;
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 
 public class Dog extends Actor {
-  public Dog(Cell inLoc) {
-    loc = inLoc;
-    color = Color.YELLOW;
-    display = new ArrayList<Polygon>();
-    Polygon ear1 = new Polygon();
-    ear1.addPoint(loc.x + 5, loc.y + 5);
-    ear1.addPoint(loc.x + 15, loc.y + 5);
-    ear1.addPoint(loc.x + 5, loc.y + 15);
-    Polygon ear2 = new Polygon();
-    ear2.addPoint(loc.x + 20, loc.y + 5);
-    ear2.addPoint(loc.x + 30, loc.y + 5);
-    ear2.addPoint(loc.x + 30, loc.y + 15);
-    Polygon face = new Polygon();
-    face.addPoint(loc.x + 8, loc.y + 7);
-    face.addPoint(loc.x + 27, loc.y + 7);
-    face.addPoint(loc.x + 27, loc.y + 25);
-    face.addPoint(loc.x + 8, loc.y + 25);
-    display.add(face);
-    display.add(ear1);
-    display.add(ear2);
+  public static final Image DOG_IMG = new ImageIcon("dog.png").getImage().getScaledInstance(Cell.size, Cell.size, Image.SCALE_SMOOTH);
+  public Dog(Cell inLoc) { super(inLoc); }
+
+  @Override
+  public void updateDisplay() {
+    display.clear();
+    // No polygons needed
+  }
+
+  @Override
+  public void paint(Graphics g) {
+    g.drawImage(DOG_IMG, loc.x, loc.y, Cell.size, Cell.size, null);
+  }
+
+  public boolean canEnter(Cell c) {
+    if (c instanceof Traversable t) {
+      // Dogs cannot enter water cells; delegate to cell logic when possible
+      if (c instanceof WaterCell) return false;
+      return t.canEnter(this);
+    }
+    return false;
+  }
+
+  public boolean canMoveTo(Cell c) {
+    int dx = Math.abs(c.col - loc.col);
+    int dy = Math.abs(c.row - loc.row);
+    return (dx + dy == 1) && canEnter(c);
   }
 }

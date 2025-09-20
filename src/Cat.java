@@ -3,7 +3,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class Cat extends Actor {
-  public static final Image CAT_IMG = new ImageIcon("cat.png").getImage().getScaledInstance(Cell.size, Cell.size, Image.SCALE_SMOOTH);
+  public static final Image CAT_IMG = new ImageIcon("src/cat.png").getImage().getScaledInstance(Cell.size, Cell.size, Image.SCALE_SMOOTH);
 
   public Cat(Cell inLoc) { super(inLoc); }
 

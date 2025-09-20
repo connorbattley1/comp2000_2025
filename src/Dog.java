@@ -3,7 +3,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class Dog extends Actor {
-  public static final Image DOG_IMG = new ImageIcon("dog.png").getImage().getScaledInstance(Cell.size, Cell.size, Image.SCALE_SMOOTH);
+  public static final Image DOG_IMG = new ImageIcon("src/dog.png").getImage().getScaledInstance(Cell.size, Cell.size, Image.SCALE_SMOOTH);
   public Dog(Cell inLoc) { super(inLoc); }
 
   @Override

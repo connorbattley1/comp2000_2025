@@ -1,6 +1,7 @@
-# Grid Game – Design Notes (Inheritance, Interfaces, Generics)
+Connor Battley
+46360085
 
-This project evolves a simple 2D grid into a small game with **terrain**, **actors**, and **items**. The key goal was to use **inheritance**, **interfaces**, and **generics** in a way that *improves* the design rather than just ticking boxes.
+This project evolves a simple 2D grid into a small game with **terrain**, **actors**, and **items**. The key goal was to use **inheritance**, **interfaces**, and **generics** in a way that improves the design
 
 
 ## Inheritance – Why it helps here
@@ -17,7 +18,7 @@ This project evolves a simple 2D grid into a small game with **terrain**, **acto
 
 ---
 
-## Interfaces – Decoupling
+## Interfaces
 
 ### `Traversable`
 ```java

@@ -1,13 +1,11 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Polygon;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public abstract class Actor {
   protected Color color;
   protected Cell loc;
-  protected List<Polygon> display = new ArrayList<>();
   protected final Inventory<Item> bag = new Inventory<>();
 
   public Actor(Cell inLoc) {

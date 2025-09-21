@@ -2,7 +2,24 @@ Connor Battley
 46360085
 
 This project evolves a simple 2D grid into a small game with **terrain**, **actors**, and **items**. The key goal was to use **inheritance**, **interfaces**, and **generics** in a way that improves the design
+### Steps to compile/run
 
+1. Open a terminal in the project root folder.  
+2. Compile all source files:
+   ```bash
+   javac *.java
+3. Run with
+    ```bash
+   java Main
+Gameplay Instructions
+	•	Start the game: Click anywhere on the grid.
+	•	Dog controls: W = up, A = left, S = down, D = right.
+	•	Cat controls: Arrow keys.
+	•	Scoring:
+	•	Dog: +2 for Bones, +1 for other items.
+	•	Cat: +2 for Fish, +1 for other items.
+	•	Winning: First to 10 points wins.
+	•	Restart: Press the Restart button in the sidebar to play again.
 
 ## Inheritance – Why it helps here
 

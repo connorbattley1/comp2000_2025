@@ -9,7 +9,6 @@ public class Dog extends Actor {
   @Override
   public void updateDisplay() {
     display.clear();
-    // No polygons needed
   }
 
   @Override
